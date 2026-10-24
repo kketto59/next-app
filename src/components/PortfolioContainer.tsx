@@ -55,9 +55,6 @@ export default function PortfolioContainer({ initialWorks }: PortfolioContainerP
             {currentWork.title} — <span style={{ fontFamily: 'monospace' }}>{currentWork.category}</span>
           </p>
         </div>
-        <div style={{ fontSize: '12px', fontFamily: 'monospace', color: '#a3a3a3' }}>
-          [ Drag to Rotate / Scroll to Zoom ]
-        </div>
       </header>
 
       {/* 2. メイン3Dビューワー（上下の残りの高さをすべて占有） */}
