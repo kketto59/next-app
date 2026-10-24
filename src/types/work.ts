@@ -22,9 +22,7 @@ export interface Work {
 }
 
 export async function getWorks(): Promise<Work[]> {
-  if (!process.env.MICROCMS_SERVICE_DOMAIN || !process.env.MICROCMS_API_KEY) {
-    return [];
-  }
+  if (!client) return [];
 
   const data = await client.get<MicroCMSListResponse<MicroCMSWork>>({
     endpoint: 'works',

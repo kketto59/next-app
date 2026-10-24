@@ -33,6 +33,7 @@ function extractImages(thumbnail: MicroCMSWork['thumbnail']): string[] {
 }
 
 export async function getWorks(): Promise<Work[]> {
+  if (!client) return [];
   try {
     const data = await client.get<MicroCMSListResponse<MicroCMSWork>>({
       endpoint: 'works',
@@ -61,6 +62,7 @@ export async function getWorks(): Promise<Work[]> {
 }
 
 export async function getWorkById(id: string): Promise<Work | null> {
+  if (!client) return null;
   try {
     const item = await client.get<MicroCMSWork>({
       endpoint: 'works',
