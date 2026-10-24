@@ -1,8 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* ここより下の初期スタイル（:root や body の余計なグラデーションなど）は削除してOK */
 body {
   margin: 0;
   padding: 0;

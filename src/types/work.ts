@@ -1,4 +1,4 @@
-import { client } from './microcms';
+import { client } from '../lib/microcms';
 import type { MicroCMSListResponse } from 'microcms-js-sdk';
 
 export interface MicroCMSWork {
@@ -30,7 +30,7 @@ export async function getWorks(): Promise<Work[]> {
     },
   });
 
-  return data.contents.map((item) => ({
+  return data.contents.map((item: MicroCMSWork & { id: string }) => ({
     id: item.id,
     title: item.title,
     category: item.category,
